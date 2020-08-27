@@ -1,0 +1,10 @@
+<webapp>
+    <servlet>
+        <servlet-name>AppServlet</servlet-name>
+        <servlet-class>com.revature</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppServlet</servlet-name>
+        <url-pattern>/loadbalancer</url-pattern>
+    </servlet-mapping>
+</webapp>
