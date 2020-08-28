@@ -1,7 +1,7 @@
 <webapp>
     <servlet>
         <servlet-name>AppServlet</servlet-name>
-        <servlet-class>com.revature</servlet-class>
+        <servlet-class>com.revature.AppServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AppServlet</servlet-name>
