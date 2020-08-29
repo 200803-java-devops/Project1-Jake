@@ -19,7 +19,8 @@ public class Ports extends Thread
 
     public void run()
     {   while (true)    
-        {   System.out.println("Socket " + socket.getLocalPort() + " listening!!!!!");
+        {   int port2 = socket.getLocalPort();
+            System.out.println("Socket " + port2 + " listening!!!!!");
             Socket connection;
             try
             {   connection = this.socket.accept();
@@ -27,7 +28,7 @@ public class Ports extends Thread
                 RequestHandler request = new RequestHandler(connection);
                 System.out.println("Starting a new port thread.");
                 Response response = new Response(connection.getOutputStream());
-                response.send();
+                response.send(port2);
             }   catch (IOException e)
             {   e.printStackTrace();
             }

@@ -30,8 +30,8 @@ public class Response
         headers.put("Content-Length", String.valueOf(body.length));
     }
 
-    public static void send() {
-        PrintWriter writer = new PrintWriter(output, true);
+    public static void send(int port2) 
+    {   PrintWriter writer = new PrintWriter(output, true);
         writer.println("HTTP/1.1 " + status);
         headers.forEach((key, value) -> writer.println(key + ": " + value));
         writer.println();
@@ -43,7 +43,7 @@ public class Response
                 System.err.println("Error writing response body");
             }
         }
-        writer.println("Welcome to one of the local ports!");
+        writer.println("Welcome to Port: " + port2 + "!");
         writer.flush();
         writer.close();
     }

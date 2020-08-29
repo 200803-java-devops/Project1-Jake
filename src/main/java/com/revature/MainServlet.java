@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/loadbalancer")
 public class MainServlet extends HttpServlet
-{   
+{   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {   response.getWriter().println("Hello World!");
     }

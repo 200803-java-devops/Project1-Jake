@@ -26,8 +26,8 @@ public final class Server
         sp3.start();
 
         while (true)
-        {   if (addPort == 8084)
-            {   addPort = 8080; }
+        {   if (addPort >= 8084)
+            {   addPort = 8081; }
         
             addPort += 1;
 
@@ -37,7 +37,7 @@ public final class Server
             Thread thread = new Thread(request);
             thread.start();
             thread.sleep(100);
-            socket.close();
+            request.run();
             System.out.println("Thread has started");
         }
     }
