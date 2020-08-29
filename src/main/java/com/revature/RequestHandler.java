@@ -75,7 +75,6 @@ public class RequestHandler extends Thread
 
             os.close();
             br.close();
-            socket.close();
             System.out.println("Thread Done");
 
         }   catch (IOException e)

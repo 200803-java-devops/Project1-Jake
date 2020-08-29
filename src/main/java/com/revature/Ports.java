@@ -5,7 +5,6 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.http.HttpRequest;
-import java.util.Calendar;
 
 
 public class Ports extends Thread 
@@ -27,8 +26,8 @@ public class Ports extends Thread
                 System.out.println("Connection accepted on " + connection.getLocalPort() + "%%%%%%%");
                 RequestHandler request = new RequestHandler(connection);
                 System.out.println("Starting a new port thread.");
-
-                
+                Response response = new Response(connection.getOutputStream());
+                response.send();
             }   catch (IOException e)
             {   e.printStackTrace();
             }
