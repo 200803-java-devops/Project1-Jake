@@ -24,10 +24,10 @@ public class Ports extends Thread
             Socket connection;
             try
             {   connection = this.socket.accept();
-                System.out.println("Connection accepted on " + connection.getLocalPort() + "%%%%%%%");
+                System.out.println("Connection accepted on " + connection.getLocalPort());
                 RequestHandler request = new RequestHandler(connection);
                 System.out.println("Starting a new port thread.");
-                Response response = new Response(connection.getOutputStream());
+                Response response = new Response(connection.getOutputStream(), port2);
                 response.send(port2);
             }   catch (IOException e)
             {   e.printStackTrace();

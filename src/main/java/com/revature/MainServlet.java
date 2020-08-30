@@ -17,9 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/loadbalancer")
 public class MainServlet extends HttpServlet
-{   @Override
+{   int addPort;
+    
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {   response.getWriter().println("Hello World!");
+        response.getWriter().println(" Redirecting");
+        response.sendRedirect("localhost:8082");
     }
     
     {   Server server = new Server();
@@ -30,5 +34,4 @@ public class MainServlet extends HttpServlet
         }   catch (Exception e)
         {   e.printStackTrace();    }
     }
-    
 }
