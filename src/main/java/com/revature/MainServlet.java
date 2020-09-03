@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Random;
+import java.net.HttpURLConnection;
 
 //A radically new and experimental branch.
 //Still a little broken.
@@ -33,7 +34,7 @@ public class MainServlet extends HttpServlet
 
         int num = array.length;     
         for (int i=0; i < num-1; i++)
-        {   for (int j=0; j < num-i-1;j++)
+        {   for (int j=0; j < num-i-1; j++)
             {   if (array[j] > array[j+1])
                 {   int temp = array[j];
                     array[j] = array[j+1];
@@ -44,15 +45,15 @@ public class MainServlet extends HttpServlet
 
         if (temp1 == array[0])
         {   counter.add1();
-            response.sendRedirect("/LoadBalancer-1.0-SNAPSHOT/servlet1");
+            response.sendRedirect("http://localhost:8081");
         }
         else if (temp2 == array[0])
         {   counter.add2();
-            response.sendRedirect("/LoadBalancer-1.0-SNAPSHOT/servlet2");
+            response.sendRedirect("http://localhost:8082");
         } 
         else if (temp3 == array[0])
         {   counter.add3();
-            response.sendRedirect("/LoadBalancer-1.0-SNAPSHOT/servlet3");
+            response.sendRedirect("http://localhost:8083");
         }
     }
 }

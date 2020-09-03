@@ -22,6 +22,21 @@ public class AccessDB
         return rs;
     }
 
+    public ResultSet getid()
+    {   Connect connect = new Connect();
+        Connection c = connect.getConnect();
+        PreparedStatement p = null;
+        ResultSet rs2 = null;
+
+        try
+        {   p = c.prepareStatement("SELECT id FROM COUNT;");
+            rs2 = p.executeQuery();
+        }   catch (SQLException s)
+        {   s.printStackTrace();    }
+
+        return rs2;
+    }
+
     public void addCount(int r, int temp)
     {   Connect connect = new Connect();
         Connection c = connect.getConnect();
@@ -35,6 +50,15 @@ public class AccessDB
         }   catch (SQLException s)
         {   s.printStackTrace();    }
 
+        query = "UPDATE Count SET servers='Server 1' WHERE id =1; UPDATE Count SET servers='Server 2' WHERE id=2; UPDATE Count SET servers='Server 3' WHERE id=3;";
+
+        try
+        {   p = c.prepareStatement(query);
+            p.executeQuery();
+        }   catch (SQLException s)
+        {   s.printStackTrace();    }
+
+        
         query = "Select * FROM Count;";
         
         try 
@@ -47,7 +71,7 @@ public class AccessDB
         {   
             try 
             {   while (rs.next())
-                System.out.println("id# " + rs.getString("id") + "  |  Servlet: " + rs.getString("Servlets")
+                System.out.println("id# " + rs.getString("id") + "  |  Server: " + rs.getString("Servers")
                         + "  |  requests: " + rs.getString("requests"));
             } catch (SQLException e) 
             {   e.printStackTrace();    }

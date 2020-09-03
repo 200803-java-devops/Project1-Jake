@@ -1,5 +1,5 @@
 create table Count
-(   id int,
+(   id int primary key,
     Servlets VARCHAR,
     requests int
 );
