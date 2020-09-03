@@ -13,7 +13,7 @@ public class AccessDB
         ResultSet rs = null;
 
         try
-        {   p = c.prepareStatement("SELECT requests FROM Count");   
+        {   p = c.prepareStatement("SELECT requests FROM Count;");   
             rs = p.executeQuery();
         }
         catch (SQLException s)
@@ -27,7 +27,7 @@ public class AccessDB
         Connection c = connect.getConnect();
         PreparedStatement p = null;
         ResultSet rs = null;
-        String query = "UPDATE Count SET requests=" + temp + " WHERE id=" + r; 
+        String query = "UPDATE Count SET requests=" + temp + " WHERE id=" + r + ";"; 
         
         try
         {   p = c.prepareStatement(query);
@@ -35,7 +35,7 @@ public class AccessDB
         }   catch (SQLException s)
         {   s.printStackTrace();    }
 
-        query = "Select * FROM Count";
+        query = "Select * FROM Count;";
         
         try 
         {   p = c.prepareStatement(query);

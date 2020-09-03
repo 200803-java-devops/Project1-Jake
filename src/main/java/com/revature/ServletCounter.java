@@ -4,9 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ServletCounter 
-{   protected int temp1 = 0;
-    protected int temp2 = 0;
-    protected int temp3 = 0;
+{   public int temp1 = 0;
+    public int temp2 = 0;
+    public int temp3 = 0;
 
     public void getTheCounts() 
     {   ResultSet rs = null;
