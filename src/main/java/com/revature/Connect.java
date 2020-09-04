@@ -2,6 +2,8 @@ package com.revature;
 
 import java.sql.*;
 
+//Connect to database and return driver. This is summoned several 
+//times by different classes, so it's very important.
 public class Connect {
     static final String URL = "jdbc:postgresql://localhost:5431/Count";
     static final String USER = "Count";

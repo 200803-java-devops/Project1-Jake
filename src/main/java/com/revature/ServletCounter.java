@@ -3,11 +3,13 @@ package com.revature;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//This class will attempt to access the Database and fish out request numbers for each server.
 public class ServletCounter 
 {   public int temp1 = 0;
     public int temp2 = 0;
     public int temp3 = 0;
 
+    //Gets request numbers from each server
     public void getTheCounts() 
     {   ResultSet rs = null;
         AccessDB access = new AccessDB();
@@ -26,6 +28,7 @@ public class ServletCounter
         {   s.printStackTrace();    }
     }
 
+    //Add one request counter to appropriate server
     protected void add1()
     {   this.temp1 += 1;
         int r = 1;
@@ -47,6 +50,7 @@ public class ServletCounter
         access.addCount(r, this.temp3);
     }
 
+    //Return "temp" request numbers back to LoadBalancer
     protected int getCount1()
     {   return temp1;   }
 

@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//Executes query statements and works with AccessDB for
+//appropriate commands to database.
 public class AccessDB 
 {   public ResultSet getCounts()
     {   Connect connect = new Connect();

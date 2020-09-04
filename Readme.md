@@ -14,7 +14,5 @@ number of requests.
     - [] Asks each server how many requests they currently have
     - [] Finds the server with least number of requests
     - [] Process is done before each request that comes in
-    - [] Can handle variable number of servers with minor adjustments
 - [] Redirects requests to server of choice
-    - [] Agnostic of type of application on each server
     - [] concurrent
